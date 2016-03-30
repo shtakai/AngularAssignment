@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE html ng-app="app">
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <script src='angular/angular.js'></script>
-  <script src='angular-route/angular-route.js'></script>
+  <script src='bower_components/angular-route/angular-route.js'></script>
   <script>
     /*
         This is the monolithic JavaScript that you should be modularizing.
@@ -19,7 +19,7 @@
         .when('/index', {
           templateUrl: '/partials/index.html',
           controller: 'indexController'
-        })
+        }),
         .when('/edit/:id', {
           templateUrl: '/partials/edit.html',
           controller: 'editController',
@@ -108,7 +108,7 @@
       Our controllers: Modularize these into a folder called:
       'controllers' within 'client' (you can further organize all these if you desire: e.g. client/assets/js/controllers)
     */
-    app.controller('indexController', ['$scope', 'userFactory', '$location', function($scope, userFactory, location) {
+    app.controller('indexController', ['$scope', 'userFactory', '$location', function($scope, userFactory, $location) {
       /* Private Methods */
       var usersIndex = function() {
           userFactory.index(function beingPassedToTheFactoryIndexByThisController(usersFromTheFactory) {
@@ -160,7 +160,7 @@
   <title>Document</title>
 </head>
 
-<body ng-app="app">
+<body>
   <div ng-view>
   </div>
 
