@@ -111,7 +111,7 @@ app.controller('indexController', ['$scope', 'userFactory', '$location', functio
 
   /* Scope Methods */
   $scope.show = function(user_id) {
-    location.url('/edit/' + user_id);
+    $location.url('/edit/' + user_id);
   }
   /* on load time */
   console.log("loading the controller");
