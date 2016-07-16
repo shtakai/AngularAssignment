@@ -142,11 +142,11 @@ app.controller('editController', ['$scope', 'userFactory', '$location', '$routeP
   this.getUser();
   console.log(this);
 }]);
-app.controller('newController', ['$scope','userFactory', function($scope, userFactory) {
+app.controller('newController', ['$scope', '$location','userFactory', function($scope, $location, userFactory) {
   $scope.addUser = function(){
     console.log($scope.user);
-    console.log('-------------');
     userFactory.create($scope.user);
+    $location.url('/');
 
   }
 }]);
