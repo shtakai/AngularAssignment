@@ -1,5 +1,5 @@
 <div ng-repeat = "user in users track by $index">
-  <p>Name: {{user.name}}
+  <p>Name: <span ng-bind="user.name"></span>
     <button ng-click = "show($index)">
       Edit User
     </button>
@@ -9,4 +9,4 @@
   <button>
     Create User
   </button>
-</a> 
+</a>

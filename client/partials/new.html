@@ -1,4 +1,8 @@
-<form>
-  <input type="text" ng-model = user.name>
-  <input type="submit" value = 'Add User' ng-click = "addUser()">
+<form name="userForm">
+  <input type="text" name="name" ng-model ="user.name" ng-maxlength="14" required>
+  <input ng-disabled="userForm.$invalid"  type="submit" value = 'Add User' ng-click = "addUser()">
+  <div ng-messages="userForm.name.$error" role="alert">
+    <div ng-message="required">Please enter a value for this field.</div>
+    <div ng-message="maxlength">This field can be at most 15 characters long.</div>
+  </div>
 </form>

@@ -1,5 +1,10 @@
 
-/* EDIT CONTROLLER: this controller uses 'this', and the controlValue seems to not update (a bug for you to fix! possibly one new line of code ~ 14 characters, and one modification of something that already exists)*/
+/*
+ * EDIT CONTROLLER: this controller uses 'this', and the controlValue seems to not update
+ * (a bug for you to fix! possibly one new line of code ~ 14 characters,
+ * and one modification of something that already exists)
+ */
+
 app.controller('editController', ['$scope', 'userFactory', '$location', '$routeParams', function($scope, userFactory, $location, rParams) {
   /* Public Properties */
   this.controlValue = "Current Name:";
@@ -21,12 +26,4 @@ app.controller('editController', ['$scope', 'userFactory', '$location', '$routeP
   /* on load time */
   this.getUser();
   console.log(this);
-}]);
-app.controller('newController', ['$scope', '$location','userFactory', function($scope, $location, userFactory) {
-  $scope.addUser = function(){
-    console.log($scope.user);
-    userFactory.create($scope.user);
-    $location.url('/');
-
-  }
 }]);
