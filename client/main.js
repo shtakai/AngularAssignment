@@ -123,6 +123,7 @@ app.controller('indexController', ['$scope', 'userFactory', '$location', functio
 app.controller('editController', ['$scope', 'userFactory', '$location', '$routeParams', function($scope, userFactory, $location, rParams) {
   /* Public Properties */
   this.controlValue = "Current Name:";
+  var _self = this;
   /* Public Methods */
   this.getUser = function() {
     userFactory.show(rParams.id, function passedToUserFactoryShow(user) {
@@ -134,7 +135,7 @@ app.controller('editController', ['$scope', 'userFactory', '$location', '$routeP
     userFactory.update($scope.users, rParams.id, function passedToUserFactoryUpdate(userFromFactory){
       $scope.user = userFromFactory;
       // what is this?
-      this.controlValue = "Updated Name: "
+      _self.controlValue = "Updated Name: "
     });
   }
   /* on load time */
